@@ -3,15 +3,16 @@ var Engine = Matter.Engine,
   Events = Matter.Events,
   Bodies = Matter.Bodies;
  
-var particle = [];
+var particle = null;
 var plinkos = [];
 var divisions = [];
 
 var divisionHeight=300;
 
 var score = 0;
+var count = 0;
 
-var gameState = "end";
+var gameState = "play";
 
 var leftHundredScore = 0;
 var leftTwoHundredScore = 0;
@@ -154,17 +155,17 @@ function draw() {
   //   //  score++;
   //  }
  
-  for (var j = 0; j < particle.length; j++) {
+  //for (var j = 0; j < particle.length; j++) {
    
-     particle[j].display();
-   }
+  //   particle[j].display();
+   //}
    for (var k = 0; k < divisions.length; k++) {
      
      divisions[k].display();
    }
 
    if(particle!=null) {
-    // particle.display();
+     particle.display();
   
     if(particle.body.position.y>760) {
       if(particle.body.position.x<300) {
